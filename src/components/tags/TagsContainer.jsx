@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Tags from './Tags';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTags } from '../../features/tags/tagSlice';
+import SingleVideo from '../videos/SingleVideo';
 
 const TagsContainer = () => {
   const {loading,isError,error,data} = useSelector(state=>state.tags)
@@ -11,6 +12,7 @@ const TagsContainer = () => {
     dispatch(fetchTags())
   },[dispatch])
 
+  let content
   if (loading) {
     content = "loading....."
   }
@@ -26,9 +28,9 @@ const TagsContainer = () => {
     <div className="flex gap-2 px-5 py-6 mx-auto overflow-y-auto border-b max-w-7xl lg:px-0">
         {content}
         {/* selected */}
-        <div className="px-4 py-1 text-white bg-blue-600 rounded-full cursor-pointer">
+        {/* <div className="px-4 py-1 text-white bg-blue-600 rounded-full cursor-pointer">
           redux
-        </div>
+        </div> */}
     </div>
     </section>
    </>

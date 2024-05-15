@@ -11,6 +11,7 @@ const VideosContainer = () => {
     dispatch(fetchVideo())
   },[dispatch])
 
+  let content
   if (loading) {
     content = "loading....."
   }

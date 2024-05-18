@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react'
-import SingleVideo from './videos/SingleVideo'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchVideo } from '../features/videos/videoSlice'
+import SingleVideo from './SingleVideo'
+import { fetchVideos } from '../../features/videos/videoSlice'
 
 const VideosContainer = () => {
-  const {loading,isError,error,data} = useSelector(state=>state.video)
-  
+  const {loading,isError,error,data} = useSelector(state=>state.videos)
   const dispatch = useDispatch()
   useEffect(()=>{
-    dispatch(fetchVideo())
+    dispatch(fetchVideos())
   },[dispatch])
 
   let content
@@ -26,7 +25,7 @@ const VideosContainer = () => {
     <section className="pt-12">
       <div className="grid grid-cols-12 gap-4 max-w-7xl mx-auto px-5 lg:px-0 min-h-[300px]">
         {/* single video */}
-            <SingleVideo/>
+            {content}
         {/* error section
               <div class="col-span-12">some error happened</div> */}
       </div>

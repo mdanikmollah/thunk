@@ -6,7 +6,7 @@ import tagSlice from '../features/tags/tagSlice'
 
 export const store = configureStore({
   reducer: {
-    video:videoSlice,
+    videos:videoSlice,
     tags:tagSlice
   
   },

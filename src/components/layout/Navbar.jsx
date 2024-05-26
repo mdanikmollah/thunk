@@ -1,15 +1,16 @@
 import React from 'react'
 import Logo from '../../assets/lws.png'
 import Search from '../../assets/search.svg'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
    <>
    <nav className="shadow-md bg-slate-100">
     <div className="flex justify-between px-5 py-3 mx-auto max-w-7xl lg:px-0">
-      <a href="/">
+      <Link to="/">
         <img className="h-10" src={Logo} alt="logo" />
-      </a>
+      </Link>
       <div className="flex items-center h-10 px-5 text-sm bg-white border rounded-lg border-slate-200 ring-emerald-200">
         {/* search */}
         <form>

@@ -1,19 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SingleVideo = ({video}) => {
   
-  console.log(video);
   return (
     <div className="col-span-12 sm:col-span-6 md:col-span-3 duration-300 hover:scale-[1.03]">
     <div className="flex flex-col w-full">
       <div className="relative">
-        <a href="video.html">
+        <Link to={`/${video.id}`}>
           <img
             src={video.thumbnail}
             className="w-full h-auto"
             alt="Some video title"
           />
-        </a>
+        </Link>
         <p className="absolute px-1 text-xs text-gray-100 bg-gray-900 right-2 bottom-2 py">
           {video.duration}
         </p>

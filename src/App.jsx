@@ -1,23 +1,20 @@
 import React from 'react'
-import Navbar from './components/layout/Navbar'
-import TagsContainer from './components/tags/TagsContainer'
-import Pagination from './components/pagination/Pagination'
-import Footer from './components/layout/Footer'
-import VideosContainer from './components/videos/VideosContainer'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import RootLayout from './components/layout/RootLayout'
+import Details from './pages/Details'
 
 
 
 function App() {
-  
 
   return (
-    <>
-    <Navbar/>
-    <TagsContainer/>
-    <VideosContainer/>
-    <Pagination/>
-    <Footer/>
-    </>
+    <Routes>
+      <Route element={<RootLayout/>}>
+       <Route path= "/" element = {<Home/>} />
+       <Route path= "/:id" element = {<Details/>} />
+      </Route>     
+    </Routes>
   )
 }
 

@@ -17,8 +17,8 @@ const VideosContainer = () => {
   else if (isError) {
     content = `error ${error}`
   }
-  else if (!loading && !isError && data.length > 0) {
-    content = data.map((video)=><SingleVideo video = {video} key = {video.id}/>)
+  else if (!loading && !isError && data.data?.length > 0) {
+    content = data.data.map((video)=><SingleVideo video = {video} key = {video.id}/>)
   }
   return (
     <section className="pt-12">

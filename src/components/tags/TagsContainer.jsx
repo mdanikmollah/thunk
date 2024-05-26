@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import Tags from './Tags';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTags } from '../../features/tags/tagSlice';
-import SingleVideo from '../videos/SingleVideo';
 
 const TagsContainer = () => {
   const {loading,isError,error,data} = useSelector(state=>state.tags)

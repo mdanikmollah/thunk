@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getVideo } from "./getVideo";
+import { getVideos } from "./getVideos";
 
 const initialState = {
     loading:false,
@@ -8,13 +8,13 @@ const initialState = {
     data:{}
 }
 
-export const fetchVideos = createAsyncThunk("videos/fetchVideos",async(pageNum)=>{
-    const res = await getVideo(pageNum)
+export const fetchVideos = createAsyncThunk("videos/fetchVideos",async(id)=>{
+    const res = await getVideos(id)
     return res
 })
 
-export const videoSlice = createSlice({
-    name: "videos",
+export const videosSlice = createSlice({
+    name: "video",
     initialState,
     extraReducers:(builder)=>{
         builder.addCase(fetchVideos.pending,(state)=>{
@@ -33,4 +33,4 @@ export const videoSlice = createSlice({
     }
 })
 
-export default videoSlice.reducer
+export default videosSlice.reducer
